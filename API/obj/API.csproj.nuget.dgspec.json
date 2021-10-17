@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Personal\\Learning\\API\\API.csproj": {}
+    "C:\\Personal\\Learning\\learning\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Personal\\Learning\\API\\API.csproj": {
+    "C:\\Personal\\Learning\\learning\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Personal\\Learning\\API\\API.csproj",
+        "projectUniqueName": "C:\\Personal\\Learning\\learning\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Personal\\Learning\\API\\API.csproj",
+        "projectPath": "C:\\Personal\\Learning\\learning\\API\\API.csproj",
         "packagesPath": "C:\\Users\\24219\\.nuget\\packages\\",
-        "outputPath": "C:\\Personal\\Learning\\API\\obj\\",
+        "outputPath": "C:\\Personal\\Learning\\learning\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\24219\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -38,6 +38,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
             "MySql.Data": {
               "target": "Package",
               "version": "[8.0.26, )"

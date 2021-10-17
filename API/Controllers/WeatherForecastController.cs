@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using WeatherForecast.Models;
@@ -15,9 +16,17 @@ namespace API.Controllers
     {
         private readonly WeatherForecastService _weatherforecastService;
 
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+        private static readonly string[] Summaries = new[] {
+            "Freezing",
+            "Bracing",
+            "Chilly",
+            "Cool",
+            "Mild",
+            "Warm",
+            "Balmy",
+            "Hot",
+            "Sweltering",
+            "Scorching"
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
@@ -38,11 +47,12 @@ namespace API.Controllers
                 TemperatureC = rng.Next(-20, 55),
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
-            .ToArray();
+                .ToArray();
         }
 
         [HttpGet]
         [Route("employee-detail/{id}")]
+        [Authorize]
         public Object GetEmployeeDetails(int id)
         {
             return _weatherforecastService.GetEmployeeDetails(id);
@@ -52,7 +62,7 @@ namespace API.Controllers
         [Route("add-employee-detail")]
         public void AddEmployeeDetail([FromBody] Employee name)
         {
-           _weatherforecastService.AddEmployeeDetail(name.Name);
+            _weatherforecastService.AddEmployeeDetail(name.Name);
         }
     }
 }
